@@ -1,0 +1,91 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assn-6|Set-B|Que-1</title>
+    <style>
+      body {
+        background-color: hsl(83, 23%, 51%);
+        color: #f0e5e5;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        min-width: 400px;
+        padding: 30px;
+      }
+
+      label {
+        font-size: 20px;
+        font-style: oblique;
+      }
+
+      h2 {
+        font-size: 30px;
+        text-align: center;
+      }
+
+      input {
+        height: 50px;
+        font-size: 29px;
+        text-align: center;
+      }
+
+      #ans-here {
+        color: #e9dede;
+      }
+
+      .btn {
+        font-size: 23px;
+        padding: 17px 30px;
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <label>
+        <h1>Print prime number between 1 to 89</h1>
+        <h2 id="ans">ans</h2>
+      </label>
+      <button class="btn" onclick="solution()">
+        print prime numbers between 1 to 89
+      </button>
+    </div>
+
+    <script>
+      function solution() {
+        var ans = document.getElementById("ans");
+        var maxNum = 89;
+        var primes = [];
+        function isPrime(num) {
+          if (num < 2){
+               return false
+            };
+          for (var i = 2; i < num; i++) {
+            if (num % i == 0){ 
+                return false;
+            }
+          }
+          return true;
+        }
+        for (var i = 0; i < maxNum; i++) {
+          if (isPrime(i)) {
+            // console.log(i);
+            primes.push(i);
+            // console.log(primes)
+          }
+        }
+        ans.innerText = primes;
+    }
+
+
+    </script>
+  </body>
+</html>
